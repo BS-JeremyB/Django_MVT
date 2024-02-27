@@ -4,10 +4,14 @@
 
 {% block content %}
 
+<a class="btn btn-primary" href="{% url 'article:create' %}"> Créer un article </a> 
+
 {% for article in articles %}
-    <h1><a href="{% url 'article:article' id=article.id %}">{{ article.titre }}<a></h1>
-    <p>{{ article.contenu }}</p>
-    <span>{{ article.date }}</span>
+    <div class="article">
+        <h1><a href="{% url 'article:article' id=article.id %}">{{ article.titre }}</a></h1>
+        <p>{{ article.contenu }}</p>
+        <span>{{ article.date }}</span>
+    </div>
 {% endfor %}
 
 {% endblock %}
